@@ -20,8 +20,6 @@ Este proyecto es una **API REST** de grado profesional desarrollada con **ASP.NE
 * **Documentación**: Swagger/OpenAPI con soporte para esquemas de seguridad Bearer.
 * **Servicios de Email**: Integración con MailKit y protocolos SMTP.
 
-
-
 ## 🗃️ Modelo de Datos y Relaciones
 
 La lógica de negocio se divide en módulos interconectados que aseguran la integridad referencial en MariaDB:
@@ -35,7 +33,23 @@ La lógica de negocio se divide en módulos interconectados que aseguran la inte
 
 Sigue estos pasos para poner en marcha el proyecto:
 
-### 1. Preparar la Base de Datos
+### Preparar la Base de Datos
 Asegúrate de tener un servidor MariaDB activo. Genera la estructura de tablas ejecutando:
+- Para crear la structura correspondiente de la base de datos.
 ```powershell
-dotnet ef database update
+add-migration
+```
+
+- Ejecuta la estructura y crea la base de datos
+```powershell
+database-update
+```
+Para ello, en este caso lo he hecho directamente en Visual Studio, usando la `Consola del Administrador de paquetes`.
+![Ventana de Administrado de Paquetes](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/VentanaAdministradorDePaquetes.png?raw=true)
+
+Asegúrate de elegir `API.FornitureStore.Data` para dar comienzo con la structura y creación de la base de datos.
+![Consola de Administrado de Paquetes](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/ConsolaAdministradorDePaquetes.png?raw=true)
+
+Una vez ejecutado exitosamente los comandos, verás como en tu `MariaDB` se ha creado automáticamente la base datos con toda su estructura. 
+
+![MariaDb FurnitureStore](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MariaDBFurnitureStore.png?raw=true)
