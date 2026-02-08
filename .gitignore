@@ -1,0 +1,27 @@
+## Directorios de binarios y compilación
+[Bb]in/
+[Oo]bj/
+
+## Archivos de configuración de VS
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Los paquetes de Nuget que se restauran automáticament al compilar.
+packages/
+!packages/repositories.config
+
+## Archivos temporales y de caché
+*.log
+*.tmp
+*.cache
+
+## Archivos de despliegue o publicación
+*.publish.xml
+
+## Bases de datos sqlite
+*.db
+*.db-shm
+*.db-wal
