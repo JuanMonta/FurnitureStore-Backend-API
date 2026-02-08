@@ -53,3 +53,23 @@ Asegúrate de elegir `API.FornitureStore.Data` para dar comienzo con la structur
 Una vez ejecutado exitosamente los comandos, verás como en tu `MariaDB` se ha creado automáticamente la base datos con toda su estructura. 
 
 ![MariaDb FurnitureStore](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MariaDBFurnitureStore.png?raw=true)
+
+## 📨 Configuración Local SMTP
+Pone en marcha la verificacion de email.
+* **Servidor SMTP**: Se recomienda usar [Papercut SMTP](https://papercut.codeplex.com/) para capturar los correos de verificación localmente, así no depender y configurar los servicios de correo reales que tengas.
+* **Correos Temporales**: [Yopmail](https://yopmail.com) Utilizado para generar direcciones de correo rápidas y validar el flujo de confirmación de cuenta.
+* **Configuración necesaria**: No olvides configurar lo necesario en `appsettings.json`, se recomienda encarecidamente que uses los `secrets`.
+
+![Configuraciones de secrets](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/ConfSecrets.png?raw=true)
+
+![Menu para acceder a secrets](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MenuSecrets.png?raw=true)
+
+### 🧪 Guía de Pruebas Rápidas
+Para probar el sistema de autenticación sin usar correos reales:
+1. Tener corriendo localmente [Papercut SMTP](https://papercut.codeplex.com/)
+2. Genera un correo desechable en [YOPmail](https://yopmail.com).
+3. Úsalo en el endpoint `/api/Authentication/Register`.
+4. Ahora `Papercut SMTP` capturará interceptará toda salida SMTP y la mostrará en su bandeja, por lo que nunca te llegará a `YOPmail`, revisa la bandeja de entrada de papercut para obtener el enlace de confirmación generado por la API.
+![SMT local](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MailTest.png?raw=true)
+5. Ahora en `/api/Authentication/Login` inicia sesión y copia el `token` que se generó y pégalo en swagger en el apartado de autorize, y podrás usar el resto de endpoints de la API. Si no te funciona, intenta primero anteponer la palabra `Bearer + [un espcio] + [tu token]`, ejemplo: `Bearer askljdkfljaslkdjakd`.
+![Auth](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MailTestAuth.png?raw=true)
