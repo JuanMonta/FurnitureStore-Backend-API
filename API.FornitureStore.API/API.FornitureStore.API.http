@@ -1,0 +1,6 @@
+@API.FornitureStore.API_HostAddress = http://localhost:5215
+
+GET {{API.FornitureStore.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

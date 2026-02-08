@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="API.FornitureStore.API/API.FornitureStore.API.csproj" />
+  <Project Path="API.FornitureStore.Data/API.FornitureStore.Data.csproj" />
+  <Project Path="API.FornitureStore.Shared/API.FornitureStore.Shared.csproj" />
+</Solution>
