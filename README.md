@@ -70,6 +70,9 @@ Para probar el sistema de autenticación sin usar correos reales:
 2. Genera un correo desechable en [YOPmail](https://yopmail.com).
 3. Úsalo en el endpoint `/api/Authentication/Register`.
 4. Ahora `Papercut SMTP` capturará interceptará toda salida SMTP y la mostrará en su bandeja, por lo que nunca te llegará a `YOPmail`, revisa la bandeja de entrada de papercut para obtener el enlace de confirmación generado por la API.
+
 ![SMT local](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MailTest.png?raw=true)
-5. Ahora en `/api/Authentication/Login` inicia sesión y copia el `token` que se generó y pégalo en swagger en el apartado de autorize, y podrás usar el resto de endpoints de la API. Si no te funciona, intenta primero anteponer la palabra `Bearer + [un espcio] + [tu token]`, ejemplo: `Bearer askljdkfljaslkdjakd`.
+
+6. Ahora en `/api/Authentication/Login` inicia sesión y copia el `token` que se generó y pégalo en swagger en el apartado de autorize, y podrás usar el resto de endpoints de la API. Si no te funciona, intenta primero anteponer la palabra `Bearer + [un espcio] + [tu token]`, ejemplo: `Bearer askljdkfljaslkdjakd`.
+   
 ![Auth](https://github.com/JuanMonta/FurnitureStore-Backend-API/blob/main/imgs/MailTestAuth.png?raw=true)
